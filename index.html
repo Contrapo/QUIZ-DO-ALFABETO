@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz do Alfabeto</title>
+  <link rel="stylesheet" type="text/css" href="ASSETS/style.css" media="screen">
+</head>
+
+<body>
+  
+    <!-- Link do JavaScript -->
+    <script src="ASSETS/script.js"></script>
+
+    <!-- DIV Para organizar o quiz -->
+    <div class="quiz-todo">
+
+    <!-- Título do Quiz (Duhhh) -->
+    <div class="titulo-quiz">
+        <h2>ALFABETIZAÇÃO</h2>
+    </div>
+
+    <br>
+
+
+    <!-- Onde fica o Quiz -->
+    <div class="janela-quiz">
+
+        <!-- Tela de armazenamento de nome -->
+        <div class="nome-quiz text-center" id="name-input">
+            <label for="username"> <h2>Digite seu nome:</h2> </label>
+            <br>
+            <br>
+            <!-- Caixa onde se escreve o nome -->
+            <div class="caixa-nome">
+            <input class="letras-nome" type="text" id="username">
+            </div>
+            <br>
+            <br>
+            <!-- Botão de começar o quiz -->
+            <button class="text-center btn btn-outline-purple mt-auto" onclick="startQuiz()"> Começar </button>
+        </div>
+        
+        <!-- DIV das alternativas -->
+        <div class="text-center" id="quiz" style="display: none;">
+            <div class="question" id="question"></div>
+            <div class="options" id="options"></div>
+            <div id="result"></div>
+            <br>
+            <!-- Botão para prosseguir para próxima pergunta -->
+            <button class="text-center btn btn-outline-purple mt-auto" onclick="nextQuestion()"> Próxima </button>
+        </div>
+    
+        <!-- Placar de acertos e erros -->
+        <div class="text-center" id="score-screen" style="display: none;">
+            <h2>Sua Pontuação</h2>
+            <div id="score-details"></div>
+        </div>
+    
+    </div>
+
+    </div>
+
+    <!-- Widget do Vlibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      </script>
+
+</body>
+
+</html>
