@@ -56,6 +56,10 @@ body {
     color: #81007b;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .question {
     margin-bottom: 20px;
   }
