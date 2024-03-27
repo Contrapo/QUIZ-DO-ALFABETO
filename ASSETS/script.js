@@ -4,7 +4,7 @@ const questionsAndAnswers = [
   { question: "Qual das opções começam com a letra 'B'?", options: ["Amarelo", "Bola", "Cachorro", "Dado"], correctAnswer: "Bola" },
   { question: "Qual das opções começam com a letra 'C'?", options: ["Avião", "Bicicleta", "Carro", "Dinossauro"], correctAnswer: "Carro" },
   { question: "Qual das opções começam com a letra 'D'?", options: ["Barco", "Dado", "Elefante", "Foca"], correctAnswer: "Dado" },
-  { question: "Qual das opções começam com a letra 'E'?", options: ["Cobra", "Elefante", "Flor", "Avião"], correctAnswer: "Elefante" },
+  { question: "Qual das opções começam com a letra 'E'?", options: ["Cobra", "Elefante", "Flor", "Espelho"], correctAnswer: "Elefante" },
 ];
 
 let username = "";
@@ -64,21 +64,21 @@ function nextQuestion() {
 
   // Aguardar a animação de piscar
   setTimeout(() => {
-    // Remover a classe 'selected' da opção selecionada
-    selectedOption.classList.remove('selected');
-    // Remover as classes 'correct' e 'wrong' da opção selecionada
-    selectedOption.classList.remove('correct');
-    selectedOption.classList.remove('wrong');
+      // Remover a classe 'selected' da opção selecionada
+      selectedOption.classList.remove('selected');
+      // Remover as classes 'correct' e 'wrong' da opção selecionada
+      selectedOption.classList.remove('correct');
+      selectedOption.classList.remove('wrong');
 
-    // Avançar para a próxima pergunta
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questionsAndAnswers.length) {
-        showQuestion();
-    } else {
-        // Exibir pontuação final quando todas as perguntas forem respondidas
-        showFinalScore();
-    }
-}, 2000); // Tempo de espera em milissegundos
+      // Avançar para a próxima pergunta
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questionsAndAnswers.length) {
+          showQuestion();
+      } else {
+          // Exibir pontuação final quando todas as perguntas forem respondidas
+          showFinalScore();
+      }
+  }, 1500); // Tempo de espera em milissegundos
 }
 
 // Função para exibir uma pergunta
@@ -119,7 +119,7 @@ function showFinalScore() {
   // Exibir pontuação final
   const scoreDetails = document.getElementById('score-details');
   const correctAnswers = questionsAndAnswers.filter(question => {
-      return question.options.find(option => option === question.correctAnswer) === document.querySelector('.option.selected').innerText;
+      return question.options.indexOf(question.correctAnswer) === document.querySelectorAll('.option.correct').length;
   }).length;
 
   scoreDetails.innerText = `${username}, você acertou ${correctAnswers} de ${questionsAndAnswers.length} perguntas.`;
