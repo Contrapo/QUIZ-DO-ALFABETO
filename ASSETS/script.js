@@ -4,7 +4,7 @@ const questionsAndAnswers = [
   { question: "Qual das opções começam com a letra 'B'?", options: ["Amarelo", "Bola", "Cachorro", "Dado"], correctAnswer: "Bola" },
   { question: "Qual das opções começam com a letra 'C'?", options: ["Avião", "Bicicleta", "Carro", "Dinossauro"], correctAnswer: "Carro" },
   { question: "Qual das opções começam com a letra 'D'?", options: ["Barco", "Dado", "Elefante", "Foca"], correctAnswer: "Dado" },
-  { question: "Qual das opções começam com a letra 'E'?", options: ["Cobra", "Elefante", "Flor", "Espelho"], correctAnswer: "Elefante" },
+  { question: "Qual das opções começam com a letra 'E'?", options: ["Cobra", "Elefante", "Flor", "Avião"], correctAnswer: "Elefante" },
 ];
 
 let username = "";
