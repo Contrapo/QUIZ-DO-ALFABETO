@@ -133,6 +133,22 @@ body {
   .option.selected {
     border: 2px solid #81007b;
   }
+
+  .option.correct {
+    border: 2px solid green;
+    animation: blink 0.5s linear 3;
+}
+
+.option.wrong {
+    border: 2px solid red;
+    animation: blink 0.5s linear 3;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
   
 #result {
     font-weight: bold;
