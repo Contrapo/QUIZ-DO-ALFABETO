@@ -1,24 +1,24 @@
 // Definição das perguntas e respostas
 const questionsAndAnswers = [
   { question: "QUAL DAS FIGURAS COMEÇA COM A LERTRA A ?", 
-  options: ["Abacaxi", "Banana", "Cenoura", "Dente"], 
-  correctAnswer: "Abacaxi" },
+  options: ["ABACAXI", "BANANA", "CENOURA", "DENTE"], 
+  correctAnswer: "ABACAXI" },
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LERTRA B ?", 
-  options: ["Amarelo", "Bola", "Cachorro", "Dado"], 
-  correctAnswer: "Bola" },
+  options: ["ROSA", "BALÃO", "CACHORRO", "PIRULITO"], 
+  correctAnswer: "BALÃO" },
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LERTRA C ?", 
-  options: ["Avião", "Bicicleta", "Carro", "Dinossauro"], 
-  correctAnswer: "Carro" },
+  options: ["AVIÃO", "BICICLETA", "CARRO", "DINOSSAURO"], 
+  correctAnswer: "CARRO" },
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LERTRA D ?", 
-  options: ["Barco", "Dado", "Elefante", "Foca"], 
-  correctAnswer: "Dado" },
+  options: ["BARCO", "DADO", "ELEFANTE", "FOCA"], 
+  correctAnswer: "DADO" },
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LERTRA E ?", 
-  options: ["Cobra", "Elefante", "Flor", "Espelho"], 
-  correctAnswer: "Elefante" },
+  options: ["COBRA", "ELEFANTE", "FLOR", "CAMINHÃO"], 
+  correctAnswer: "ELEFANTE" },
   
 ];
 
