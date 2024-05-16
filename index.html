@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="ASSETS/style.css" media="screen">
+  
+  <!-- CSS do Toastify -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  
+  <!-- Ícone da Página -->
+  <link rel="icon" type="image/x-icon" href="alphabet-letters-a-b-and-c-svgrepo-com.svg"/>
+
+</head>
+
+<body>
+  
+  <!-- Link do JavaScript -->
+  <script src="ASSETS/script.js"></script>
+
+  <!-- Título do Quiz (Duhhh) -->
+  <div class="titulo-quiz">
+    <h2>ALFABETIZAÇÃO</h2>
+  </div>
+
+  <!-- Botão PLAY -->
+  <div class="Tela-Play-Style" id="TelaPlayJanela">
+    <button class="text-center round-button" onclick="BotaoPlay()"> <p> JOGAR </p> </button>
+  </div>
+
+  <!-- Tela de armazenamento de nome -->
+  <div class="hidden" id="JanelaNome">
+  <div class="janela-redonda">
+    <div class="nome-quiz text-center" id="name-input">
+      <label for="username"> <h2>DIGITE SEU NOME</h2> </label>
+      <br>
+      <!-- Caixa onde se escreve o nome -->
+      <div class="caixa-nome">
+      <input class="letras-nome" type="text" id="username">
+      </div>
+      <br>
+      <br>
+      <!-- Botão de começar o quiz -->
+      <button class="text-center btn btn-outline-purple mt-auto" onclick="startQuiz()"> COMEÇAR </button>
+    </div>
+  </div>
+  </div>
+
+  <main>
+
+    <!-- DIV Para organizar o quiz -->
+    <div class="quiz-todo hidden" id="Quiz-Todo">
+
+    <!-- Onde fica o Quiz -->
+    <div class="janela-quiz">
+
+        <!-- DIV das alternativas -->
+        <div class="text-center" id="quiz" style="display: none;">
+            <div class="question" id="question"></div>
+            <div class="options" id="options"></div>
+            <div id="result"></div>
+            <br>
+            <!-- Botão para prosseguir para próxima pergunta -->
+            <button class="text-center btn btn-outline-purple mt-auto" onclick="nextQuestion()"> AVANÇAR </button>
+        </div>
+    
+        <!-- Placar de acertos e erros -->
+        <div id="score-screen" style="display: none;">
+            <div class="text-center Texto-Resultados-1"> <h2>SUA PONTUAÇÃO</h2> </div>
+            <div class="Texto-Resultados-2" id="score-details"></div>
+        </div>
+    
+    </div>
+
+    </div>
+
+  </main>
+
+    <!-- Widget do Vlibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      </script>
+
+    <!-- API de Avisos personalizados -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+<!-- Fundo de Letras -->
+<img src="IMAGENS/bg1.png" alt="" class="bg">
+  
+<img src="IMAGENS/bg2.png" alt="" class="bg2">
+
+<img src="IMAGENS/bg3.png" alt="" class="bg3">
+
+<img src="IMAGENS/bg4.png" alt="" class="bg4">
+
+</body>
+
+</html>
