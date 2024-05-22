@@ -1,25 +1,109 @@
 // Definição das perguntas e respostas
 const questionsAndAnswers = [
   { question: "QUAL DAS FIGURAS COMEÇA COM A LERTRA A ?", 
-  options: ["ABACAXI", "BANANA", "CENOURA", "DENTE"], 
+  options: ["ABACAXI", "BANANA", "CENOURA", "UVA"], 
   correctAnswer: "ABACAXI" },
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LERTRA B ?", 
-  options: ["ROSA", "BALÃO", "CACHORRO", "PIRULITO"], 
-  correctAnswer: "BALÃO" },
+  options: ["PIRULITO", "BOLA", "CACHORRO", "DADO"], 
+  correctAnswer: "BOLA" },
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LERTRA C ?", 
-  options: ["AVIÃO", "BICICLETA", "CARRO", "DINOSSAURO"], 
+  options: ["AVIÃO", "KETCHUP", "CARRO", "XÍCARA"], 
   correctAnswer: "CARRO" },
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LERTRA D ?", 
   options: ["BARCO", "DADO", "ELEFANTE", "FOCA"], 
   correctAnswer: "DADO" },
 
-  { question: "QUAL DAS FIGURAS COMEÇA COM A LERTRA E ?", 
-  options: ["COBRA", "ELEFANTE", "FLOR", "CAMINHÃO"], 
-  correctAnswer: "ELEFANTE" },
+  { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA E ?", 
+  options: ["COBRA", "ELEVADOR", "FLOR", "HELICÓPTERO"], 
+  correctAnswer: "Elefante" },
+
+  { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA F ?", 
+  options: [ "CAMINHÃO", "GARRAFA", "TECLADO", "FITA"],
+  correctAnswer: "FITA" },
+
+  { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA G ?", 
+  options: ["GATO", "PASSÁRO", "CACHORRO", "RATO"],
+  correctAnswer: "GATO" },
+
+  { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA H ?", 
+  options: ["MOUSE", "CADERNO", "HORTA", "DENTE"],
+  correctAnswer: "HORTA"},
   
+  { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA I ?", 
+  options: ["IMÃ", "CADERNO", "CAJU", "IGREJA"],
+  correctAnswer: "IGREJA"},
+
+  { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA J ?", 
+  options: ["PAPEL", "CELULAR", "COMPUTADOR", "JACA"],
+ correctAnswer: "JACA"},
+
+  { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA K ?",
+  options: ["PENTE", "KETCHUP", "AGUA", "IGREJA"],
+  correctAnswer: "KETCHUP"},
+
+  { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA L ?", 
+  options: ["TERRA", "TIJOLO" ,"SUCO" ,"LUA"],
+  correctAnswer: "LUA"},
+ 
+  { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA M ?", 
+  options: ["SOFA", "TELEVISAO", "AGUA", "MACARRAO"],
+  correctAnswer: "MACARRAO"},
+ 
+  { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA N ?", 
+  options: ["NARIZ", "COPO", "PAÇOCA", "IGREJA"],
+  correctAnswer: "NARIZ"}, 
+
+  { question: "QQUAL DAS FIGURAS COMEÇA COM A LETRA O ?", 
+  options: ["OLHO", "CAMA", "COBERTOR", "TRAVESSEIRO"],
+  correctAnswer: "OLHO"},  
+
+  { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA P ?", 
+  options: ["PORTA", "PATO", "URSO", "SABONETE"],
+  correctAnswer: "PATO"},
+
+  {question: "QUAL DAS FIGURAS COMEÇA COM A LETRA Q ?", 
+  options: ["CABELO", "RADIO", "QUEIJO", "FEIJÃO"],
+  correctAnswer: "QUEIJO"},
+
+  { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA R ?", 
+  options: ["BANCO", "LANTERNA", "BARCO", "RATO"],
+  correctAnswer: "RATO"}, 
+
+  { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA S ?", 
+  options: ["CAVALO", "LOBO", "SEREIA", "CASA"],
+  correctAnswer: "SEREIA"},
+
+  { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA T ?", 
+  options: ["CONTROLE", "SOL", "BOTÃO", "TATU"],
+  correctAnswer: "TATU"},
+ 
+  { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA U ?", 
+  options: ["URSO", "TELEVISAO", "AGUA", "IGREJA"],
+  correctAnswer: "URSO"},
+
+  { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA V ?", 
+  options: ["VACA", "MESA", "RADIO", "LIVRO"],
+  correctAnswer: "VACA"},
+ 
+  { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA W ?", 
+  options: ["CAMA", "CELULAR", "TECLADO", "WEBCAM"],
+  correctAnswer: "WEBCAM"}, 
+
+  { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA X ?", 
+  options: ["XÍCARA", "TELEVISAO", "CARRO", "MESA"],
+  correctAnswer: "XÍCARA"}, 
+
+  { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA Y ", 
+  options: ["FACEBOOK", "WHATSAPP", "NUVEMS", "YOUTUBE"],
+  correctAnswer: "YOUTUBE"},
+
+  { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA Z ?", 
+  options: ["URSO", "TIGRE", "ARROZ", "ZEBRA"],
+  correctAnswer: "ZEBRA"},
+
 ];
 
 let username = "";
@@ -167,7 +251,7 @@ function showQuestion() {
       const frontElement = document.createElement('div');
       frontElement.classList.add('front');
       const optionImage = new Image();
-      optionImage.src = `IMAGENS/QUIZ/${option}.jpg`;
+      optionImage.src = `IMAGENS/QUIZ/${option}.png`;
       optionImage.alt = option;
       optionImage.dataset.text = option; // Armazena o texto da opção
       frontElement.appendChild(optionImage);
