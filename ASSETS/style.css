@@ -58,6 +58,31 @@ main {
   height: 51%;
 }
 
+.bloco1-bg {
+  position: fixed;
+  top: 18%;
+  left: 26%;
+  rotate: 10deg;
+  z-index: -1;
+}
+
+.bloco2-bg {
+  position: fixed;
+  top: 30%;
+  right: 26%;
+  rotate: 10deg;
+  z-index: -1;
+}
+
+.bloco3-bg {
+  position: fixed;
+  bottom: 18%;
+  left: 35%;
+  rotate: -5deg;
+  z-index: -1;
+  opacity: 100;
+}
+
 .quiz-todo {
     position: absolute;
     align-self: center;
@@ -112,7 +137,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem;
+  padding: 10rem;
 }
 
 .Tela-Play-Style p {
@@ -153,14 +178,12 @@ main {
   width: 200px;
 }
 
-.caixa-nome {
+.letras-nome {
+  color: #81007b;
+  text-align: center;
   font-family: "Shantell Sans", cursive;
   background-color: #eca7fa;
   border-radius: 15px;
-}
-
-.letras-nome {
-  color: #81007b;
 }
 
 .text-left {
@@ -271,9 +294,9 @@ main {
   align-items: center;
   justify-content: center;
   transform: rotateY(180deg);
-  font-size: 2em;
+  font-size: 1.6em;
   text-align: center;
-  top: 45px;
+  top: 50px;
 }
 
 

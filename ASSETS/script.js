@@ -5,7 +5,7 @@ const questionsAndAnswers = [
   correctAnswer: "ABACAXI" },
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LERTRA B ?", 
-  options: ["PIRULITO", "BOLA", "CACHORRO", "DADO"], 
+  options: ["PIRULITO", "BOLA", "CACHORRO", "LEÃO"], 
   correctAnswer: "BOLA" },
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LERTRA C ?", 
@@ -17,8 +17,8 @@ const questionsAndAnswers = [
   correctAnswer: "DADO" },
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA E ?", 
-  options: ["COBRA", "ELEVADOR", "FLOR", "HELICÓPTERO"], 
-  correctAnswer: "Elefante" },
+  options: ["COBRA", "ELEFANTE", "FLOR", "HELICÓPTERO"], 
+  correctAnswer: "ELEFANTE" },
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA F ?", 
   options: [ "CAMINHÃO", "GARRAFA", "TECLADO", "FITA"],
@@ -29,19 +29,19 @@ const questionsAndAnswers = [
   correctAnswer: "GATO" },
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA H ?", 
-  options: ["MOUSE", "CADERNO", "HORTA", "DENTE"],
-  correctAnswer: "HORTA"},
+  options: ["MOUSE", "CADERNO", "HAMBÚRGUER", "DENTE"],
+  correctAnswer: "HAMBÚRGUER"},
   
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA I ?", 
-  options: ["IMÃ", "CADERNO", "CAJU", "IGREJA"],
+  options: ["ESTRELA", "CADERNO", "MOTO", "IGREJA"],
   correctAnswer: "IGREJA"},
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA J ?", 
-  options: ["PAPEL", "CELULAR", "COMPUTADOR", "JACA"],
- correctAnswer: "JACA"},
+  options: ["BOLO", "CELULAR", "COMPUTADOR", "JATO"],
+ correctAnswer: "JATO"},
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA K ?",
-  options: ["PENTE", "KETCHUP", "AGUA", "IGREJA"],
+  options: ["PENTE", "KETCHUP", "ÁGUA", "IGREJA"],
   correctAnswer: "KETCHUP"},
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA L ?", 
@@ -49,11 +49,11 @@ const questionsAndAnswers = [
   correctAnswer: "LUA"},
  
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA M ?", 
-  options: ["SOFA", "TELEVISAO", "AGUA", "MACARRAO"],
-  correctAnswer: "MACARRAO"},
+  options: ["SOFA", "TELEVISAO", "NOTEBOOK", "MACARRÃO"],
+  correctAnswer: "MACARRÃO"},
  
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA N ?", 
-  options: ["NARIZ", "COPO", "PAÇOCA", "IGREJA"],
+  options: ["NARIZ", "COELHO", "ACAMPAMENTO", "IGREJA"],
   correctAnswer: "NARIZ"}, 
 
   { question: "QQUAL DAS FIGURAS COMEÇA COM A LETRA O ?", 
@@ -61,11 +61,11 @@ const questionsAndAnswers = [
   correctAnswer: "OLHO"},  
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA P ?", 
-  options: ["PORTA", "PATO", "URSO", "SABONETE"],
+  options: ["CACTO", "PATO", "URSO", "SABONETE"],
   correctAnswer: "PATO"},
 
   {question: "QUAL DAS FIGURAS COMEÇA COM A LETRA Q ?", 
-  options: ["CABELO", "RADIO", "QUEIJO", "FEIJÃO"],
+  options: ["CACHOEIRA", "RÁDIO", "QUEIJO", "CAFÉ"],
   correctAnswer: "QUEIJO"},
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA R ?", 
@@ -81,11 +81,11 @@ const questionsAndAnswers = [
   correctAnswer: "TATU"},
  
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA U ?", 
-  options: ["URSO", "TELEVISAO", "AGUA", "IGREJA"],
+  options: ["URSO", "TELEVISÃO", "ÁGUA", "IGREJA"],
   correctAnswer: "URSO"},
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA V ?", 
-  options: ["VACA", "MESA", "RADIO", "LIVRO"],
+  options: ["VACA", "LIQUIDIFICADOR", "RÁDIO", "LIVRO"],
   correctAnswer: "VACA"},
  
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA W ?", 
@@ -93,17 +93,16 @@ const questionsAndAnswers = [
   correctAnswer: "WEBCAM"}, 
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA X ?", 
-  options: ["XÍCARA", "TELEVISAO", "CARRO", "MESA"],
+  options: ["XÍCARA", "TELEVISÃO", "CARRO", "MESA"],
   correctAnswer: "XÍCARA"}, 
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA Y ", 
-  options: ["FACEBOOK", "WHATSAPP", "NUVEMS", "YOUTUBE"],
+  options: ["PERFUME", "FACEBOOK", "NUVEMS", "YOUTUBE"],
   correctAnswer: "YOUTUBE"},
 
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA Z ?", 
   options: ["URSO", "TIGRE", "ARROZ", "ZEBRA"],
   correctAnswer: "ZEBRA"},
-
 ];
 
 let username = "";
@@ -114,10 +113,14 @@ function BotaoPlay() {
   // Seleciona os elementos
   var TelaPlayJanela = document.getElementById('TelaPlayJanela');
   var JanelaNome = document.getElementById('JanelaNome');
+  var BLOCOS = document.getElementById('BLOCOS');
   
   TelaPlayJanela.style.display = 'none';
   
   JanelaNome.classList.remove('hidden');
+
+  BLOCOS.classList.add('hidden');
+
 }
 
 // Função para iniciar o quiz
@@ -281,6 +284,9 @@ function selectOption(optionElement) {
 
 // Função para exibir a pontuação final
 function showFinalScore() {
+
+  playSound("PALMAS.mp3");
+  
   // Ocultar o quiz
   const quiz = document.getElementById('quiz');
   quiz.style.display = 'none';
