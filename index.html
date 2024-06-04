@@ -54,6 +54,13 @@
     <!-- DIV Para organizar o quiz -->
     <div class="quiz-todo hidden" id="Quiz-Todo">
 
+    <!-- Barra de progresso -->
+    <div id="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+
+    <br>
+
     <!-- Onde fica o Quiz -->
     <div class="janela-quiz">
 
@@ -71,6 +78,11 @@
         <div id="score-screen" style="display: none;">
             <div class="text-center Texto-Resultados-1"> <h2>SUA PONTUAÇÃO</h2> </div>
             <div class="Texto-Resultados-2" id="score-details"></div>
+
+            <br>
+
+            <!-- Botão de Reiniciar -->
+            <button class="text-center btn btn-outline-purple mt-auto" onclick="restartQuiz()"> REINICIAR </button>
         </div>
     
     </div>
@@ -97,11 +109,13 @@
 <!-- Bloquinos de Letras -->
 <div id="BLOCOS">
 
-<img src="IMAGENS/BLOCO1.png" alt="" class="bloco1-bg">
+<img src="IMAGENS/BLOCO1.png" alt="" class="bloco1-bg floating-1">
 
-<img src="IMAGENS/BLOCO2.png" alt="" class="bloco2-bg">
+<img src="IMAGENS/BLOCO2.png" alt="" class="bloco2-bg floating-2">
 
-<img src="IMAGENS/BLOCO3.png" alt="" class="bloco3-bg">
+<img src="IMAGENS/BLOCO3.png" alt="" class="bloco3-bg floating-3">
+
+<img src="IMAGENS/BLOCO1.png" alt="" class="bloco4-bg floating-4">
 
 </div>
 

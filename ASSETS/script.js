@@ -7,7 +7,7 @@ const questionsAndAnswers = [
   { question: "QUAL DAS FIGURAS COMEÇA COM A LERTRA B ?", 
   options: ["PIRULITO", "BOLA", "CACHORRO", "LEÃO"], 
   correctAnswer: "BOLA" },
-
+  
   { question: "QUAL DAS FIGURAS COMEÇA COM A LERTRA C ?", 
   options: ["AVIÃO", "KETCHUP", "CARRO", "XÍCARA"], 
   correctAnswer: "CARRO" },
@@ -19,7 +19,7 @@ const questionsAndAnswers = [
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA E ?", 
   options: ["COBRA", "ELEFANTE", "FLOR", "HELICÓPTERO"], 
   correctAnswer: "ELEFANTE" },
-
+  
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA F ?", 
   options: [ "CAMINHÃO", "GARRAFA", "TECLADO", "FITA"],
   correctAnswer: "FITA" },
@@ -49,7 +49,7 @@ const questionsAndAnswers = [
   correctAnswer: "LUA"},
  
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA M ?", 
-  options: ["SOFA", "TELEVISAO", "NOTEBOOK", "MACARRÃO"],
+  options: ["SOFA", "TELEVISÃO", "NOTEBOOK", "MACARRÃO"],
   correctAnswer: "MACARRÃO"},
  
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA N ?", 
@@ -103,8 +103,10 @@ const questionsAndAnswers = [
   { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA Z ?", 
   options: ["URSO", "TIGRE", "ARROZ", "ZEBRA"],
   correctAnswer: "ZEBRA"},
+  
 ];
 
+// Variáveis globais
 let username = "";
 let currentQuestionIndex = 0;
 let correctAnswerIndices = [];
@@ -115,12 +117,14 @@ function BotaoPlay() {
   var JanelaNome = document.getElementById('JanelaNome');
   var BLOCOS = document.getElementById('BLOCOS');
   
+  // Faz o botão sumir
   TelaPlayJanela.style.display = 'none';
   
+  // Faz a janela do nome aparecer
   JanelaNome.classList.remove('hidden');
 
+  // Faz os bloquinhos de letras sumirem
   BLOCOS.classList.add('hidden');
-
 }
 
 // Função para iniciar o quiz
@@ -157,6 +161,10 @@ function startQuiz() {
 
   const quiz = document.getElementById('quiz');
   quiz.style.display = 'block';
+
+  // Desocultar a div .janela-quiz caso o jogo tenha reiniciado
+  const janelaQuiz = document.querySelector('.janela-quiz');
+  janelaQuiz.style.display = 'flex';
 
   // Embaralhar as opções de resposta
   questionsAndAnswers.forEach(question => {
@@ -271,6 +279,9 @@ function showQuestion() {
       optionElement.addEventListener('click', () => selectOption(optionElement));
       optionsElement.appendChild(optionElement);
   });
+
+  // Atualizar a barra de progresso
+  updateProgressBar();
 }
 
 // Função para selecionar uma opção
@@ -284,6 +295,9 @@ function selectOption(optionElement) {
 
 // Função para exibir a pontuação final
 function showFinalScore() {
+
+  // Atualizar a barra de progresso
+  updateProgressBar();
 
   playSound("PALMAS.mp3");
   
@@ -309,8 +323,109 @@ function shuffleArray(array) {
   return array;
 }
 
+function restartQuiz() {
+  // Reiniciar as variáveis
+  username = "";
+  currentQuestionIndex = 0;
+  correctAnswerIndices = [];
+
+  // Ocultar tela de resultados finais e mostrar a tela de entrada de nome novamente
+  const scoreScreen = document.getElementById('score-screen');
+  scoreScreen.style.display = 'none';
+  
+  const nameInput = document.getElementById('name-input');
+  nameInput.style.display = 'block';
+
+  // Mostrar a tela de play novamente
+  const TelaPlayJanela = document.getElementById('TelaPlayJanela');
+  TelaPlayJanela.style.display = 'block';
+
+  // Desocultar a div .janela-quiz caso o jogo tenha reiniciado
+  const janelaQuiz = document.querySelector('.janela-quiz');
+  janelaQuiz.style.display = 'none';
+
+  BLOCOS.classList.remove('hidden');
+}
+
 // Função para reproduzir um som
 function playSound(soundFile) {
   const audio = new Audio(`SONS/${soundFile}`);
   audio.play();
 }
+
+// Função para atualizar a barra de progresso
+function updateProgressBar() {
+  const progressBar = document.getElementById('progress-bar');
+  const progress = (currentQuestionIndex / questionsAndAnswers.length) * 100;
+  progressBar.style.width = `${progress}%`;
+}
+
+// Lógica para avançar para a próxima pergunta
+function nextQuestion() {
+  // Verificar se o usuário selecionou uma opção
+  const selectedOption = document.querySelector('.option.selected');
+  if (!selectedOption) {
+    
+    Toastify({
+      text: "Você precisa escolher uma das opções!",
+      duration: 2000,
+      close: false,
+      gravity: "top",
+      position: "center",
+      stopOnFocus: true,
+      style: {
+        background: "#ff4545",
+      },
+    }).showToast();
+
+    return;
+  }
+
+  // Adicionar classe 'flip' para animação de virar a opção selecionada
+  selectedOption.classList.add('flip');
+
+  // Aguardar a animação de flip
+  setTimeout(() => {
+    // Mostrar o texto escondido da alternativa
+    const backElement = selectedOption.querySelector('.back');
+    backElement.style.display = 'block';
+
+    // Verificar se a opção selecionada é a correta
+    const currentQuestion = questionsAndAnswers[currentQuestionIndex];
+    const userAnswer = selectedOption.querySelector('img').alt; // Obtém o texto da opção selecionada
+    if (userAnswer === currentQuestion.correctAnswer) {
+      // Tocar som de "Acertou" se a resposta estiver correta
+      playSound("ACERTOU.mp3");
+      // Adicionar classe 'correct' à opção selecionada
+      selectedOption.classList.add('correct');
+      // Salvar o índice da pergunta respondida corretamente
+      correctAnswerIndices.push(currentQuestionIndex);
+    } else {
+      // Tocar som de "Errou" se a resposta estiver errada
+      playSound("ERROU.mp3");
+      // Adicionar classe 'wrong' à opção selecionada
+      selectedOption.classList.add('wrong');
+    }
+
+    // Aguardar a animação de piscar
+    setTimeout(() => {
+      // Remover a classe 'selected' da opção selecionada
+      selectedOption.classList.remove('selected');
+      // Remover as classes 'correct' e 'wrong' da opção selecionada
+      selectedOption.classList.remove('correct');
+      selectedOption.classList.remove('wrong');
+      // Remover a classe 'flip' após a animação de virar
+      selectedOption.classList.remove('flip');
+
+      // Avançar para a próxima pergunta
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questionsAndAnswers.length) {
+        showQuestion();
+      } else {
+        // Exibir pontuação final quando todas as perguntas forem respondidas
+        showFinalScore();
+      }
+    }, 1500); // Tempo de espera em milissegundos
+  }, 800); // Tempo de espera em milissegundos, ajuste conforme necessário
+}
+
