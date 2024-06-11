@@ -444,7 +444,7 @@ function startQuiz() {
 
     Toastify({
       text: "Você precisa escrever seu nome!",
-      duration: 2000,
+      duration: 3000,
       close: false,
       gravity: "top",
       position: "center",
@@ -509,7 +509,7 @@ function nextQuestion() {
 
     Toastify({
       text: "Você precisa escolher uma das opções!",
-      duration: 2000,
+      duration: 3000,
       close: false,
       gravity: "top",
       position: "center",
