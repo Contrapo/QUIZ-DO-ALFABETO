@@ -278,7 +278,7 @@ main {
   .options {
     display: grid;
     grid-template-columns: repeat(2, 0.1fr);
-    gap: 10px;
+    gap: 12px;
     justify-content: center;
     margin-top: 10px;
   }
@@ -290,7 +290,7 @@ main {
     justify-content: center;
     align-items: center;
     background-color: #f0f0f0;
-    border: 3px solid #ccc;
+    border: 5px solid #ccc;
     border-radius: 20px;
     cursor: pointer;
     position: relative;
@@ -302,16 +302,16 @@ main {
   }
   
   .option.selected {
-    border: 3px solid #81007b;
+    border: 5px solid #81007b;
   }
 
   .option.correct {
-    border: 3px solid green;
+    border: 5px solid green;
     animation: blink 0.5s linear 3;
 }
 
 .option.wrong {
-    border: 3px solid red;
+    border: 5px solid red;
     animation: blink 0.5s linear 3;
 }
 
@@ -411,6 +411,23 @@ main {
   line-height: 20px;
   transition: width 0.5s; /* Animação suave */
   margin: 5px;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes flashRed {
+  0%, 100% { background-color: #ff4545; color: #ffffff; border: solid #ff4545}
+  50% { background-color: #ff0000; color: #ffffff; border: solid #ff0000;}
+}
+
+.shake-and-flash {
+  animation: shake 0.3s ease, flashRed 0.3s ease;
 }
 
 /* ------------------------ BOOTSTRAP ------------------------ */

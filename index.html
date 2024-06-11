@@ -15,6 +15,8 @@
   <!-- Ícone da Página -->
   <link rel="icon" type="image/x-icon" href="alphabet-letters-a-b-and-c-svgrepo-com.svg"/>
 
+  <title>Quiz de Alfabetização</title>
+
 </head>
 
 <body>
@@ -44,7 +46,7 @@
       <br>
       <br>
       <!-- Botão de começar o quiz -->
-      <button class="text-center btn btn-outline-purple mt-auto" onclick="startQuiz()"> COMEÇAR </button>
+      <button id="Name-Button" class="text-center btn btn-outline-purple mt-auto" onclick="startQuiz()"> COMEÇAR </button>
     </div>
   </div>
   </div>
@@ -71,12 +73,12 @@
             <div id="result"></div>
             <br>
             <!-- Botão para prosseguir para próxima pergunta -->
-            <button class="text-center btn btn-outline-purple mt-auto" onclick="nextQuestion()"> AVANÇAR </button>
+            <button id="next-btn" class="text-center btn btn-outline-purple mt-auto" onclick="nextQuestion()"> AVANÇAR </button>
         </div>
     
         <!-- Placar de acertos e erros -->
         <div id="score-screen" style="display: none;">
-            <div class="text-center Texto-Resultados-1"> <h2>SUA PONTUAÇÃO</h2> </div>
+            <div class="text-center Texto-Resultados-1"> <h2>PARABÉNS!</h2> </div>
             <div class="Texto-Resultados-2" id="score-details"></div>
 
             <br>
