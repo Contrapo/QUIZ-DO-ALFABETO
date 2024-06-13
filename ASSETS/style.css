@@ -25,6 +25,17 @@ left: 0; /* Garante que o footer esteja alinhado à esquerda */
 padding-top: 25%;
 }
 
+.footer-background {
+  font-family: "Shantell Sans", cursive;
+  font-variation-settings:
+  "BNCE" 0,
+  "INFM" 0,
+  "SPAC" 0;
+  text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.350);
+  font-size: 16px;
+  z-index: -1;
+}
+
 .hidden {
   display: none;
 }
