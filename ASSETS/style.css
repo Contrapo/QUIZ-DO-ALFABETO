@@ -1,17 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght,BNCE@0,300..800,69;1,300..800,69&display=swap');
 
 body {
-    background: linear-gradient(120deg, #c680e2fd, #c248f3cb);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-main {
+  background: linear-gradient(120deg, #c680e2fd, #c248f3cb);
   display: flex;
   flex-direction: column;
-  align-content: center;
+  min-height: 1vh; /* Garante que o body tenha altura mínima de 100vh */
+  margin: 0; /* Remove margens padrões */
+}
+
+main {
+display: flex;
+flex-direction: column;
+flex: 1; /* Faz o main crescer para ocupar o espaço disponível */
+justify-content: center;
+align-items: center;
+width: 100%;
+}
+
+footer {
+width: 100%; /* Garante que o footer ocupe 100% da largura */
+position: fixed;
+bottom: 0; /* Posiciona o footer na parte inferior */
+left: 0; /* Garante que o footer esteja alinhado à esquerda */
+padding-top: 25%;
 }
 
 .hidden {
@@ -134,7 +145,7 @@ main {
 }
 
 .quiz-todo {
-    position: absolute;
+    position: relative;
     align-self: center;
     align-items: center;
     justify-content: center;
