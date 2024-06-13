@@ -278,7 +278,7 @@ const questionsAndAnswers = [
       correctAnswer: "SEREIA"},
 
     { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA S ?", 
-      options: ["MOTO", "LEÃO", "QUADRICICLO", "COELHO"], 
+      options: ["MOTO", "SOL", "QUADRICICLO", "COELHO"], 
       correctAnswer: "SOL" },
 
     { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA S ?", 
