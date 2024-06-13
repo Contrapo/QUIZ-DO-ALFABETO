@@ -183,7 +183,7 @@ const questionsAndAnswers = [
 
 { variants: [
     { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA M ?", 
-      options: ["SOFA", "TELEVISÃO", "NOTEBOOK", "MACARRÃO"],
+      options: ["SOFÁ", "TELEVISÃO", "NOTEBOOK", "MACARRÃO"],
       correctAnswer: "MACARRÃO"},
 
     { question: "QUAL DAS FIGURAS COMEÇA COM A LETRA M ?", 
